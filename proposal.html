@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtus Brand Identity & Website Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-black: #1A1A1A;
+            --color-gray-bg: #D9D9D9;
+            --color-white: #FFFFFF;
+            --color-divider: #E0E0E0;
+            --color-accent: #D5FF02;
+            --font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 10.5pt;
+            line-height: 1.5;
+            color: var(--color-black);
+            background: var(--color-white);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 32px 40px;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* Cover & End Pages */
+        .page-cover,
+        .page-end {
+            background-image: url('hf-graphic.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Content Pages */
+        .page-content {
+            background: var(--color-white);
+        }
+
+        /* Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 32px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 8pt;
+            color: #999999;
+        }
+
+        /* Logo */
+        .logo {
+            width: 142px;
+            height: auto;
+        }
+
+        /* Header with logo and line */
+        .header {
+            margin-bottom: 24px;
+        }
+
+        .header-line {
+            border: none;
+            border-top: 1px solid var(--color-divider);
+            margin-top: 16px;
+        }
+
+        /* Typography */
+        .title-main {
+            font-weight: 800;
+            font-size: 48pt;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-weight: 400;
+            font-size: 11pt;
+            color: var(--color-black);
+        }
+
+        .brand-name {
+            font-weight: 800;
+            font-size: 24pt;
+            margin-bottom: 8px;
+            margin-top: 32px;
+        }
+
+        .page-title {
+            font-weight: 600;
+            font-size: 18pt;
+            margin-bottom: 28px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            font-size: 18pt;
+            margin-bottom: 16px;
+        }
+
+        .subsection-title {
+            font-weight: 500;
+            font-size: 14pt;
+            margin-bottom: 12px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--color-divider);
+            margin: 24px 0;
+        }
+
+        /* Body text */
+        p {
+            margin-bottom: 12px;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 2px;
+        }
+
+        ul.nested {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        ul.nested li {
+            margin-bottom: 1px;
+        }
+
+        /* Bold text */
+        strong {
+            font-weight: 600;
+        }
+
+        /* Cover page title area */
+        .cover-content {
+            margin-top: auto;
+        }
+
+        /* End page contact area */
+        .contact-section {
+            margin-top: auto;
+        }
+
+        .contact-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-top: 1px solid rgba(128, 128, 128, 0.5);
+        }
+
+        .contact-row:last-child {
+            border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+        }
+
+        .contact-label {
+            font-weight: 400;
+        }
+
+        .contact-value {
+            font-weight: 400;
+            text-align: right;
+        }
+
+        /* Print specific */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page {
+                margin: 0;
+                border: none;
+                box-shadow: none;
+            }
+
+            .page-cover,
+            .page-end {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Screen preview */
+        @media screen {
+            body {
+                background: #f0f0f0;
+                padding: 20px;
+            }
+
+            .page {
+                margin: 0 auto 20px auto;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page 1: Cover -->
+    <div class="page page-cover">
+        <div class="header">
+            <img src="hf-logo.svg" alt="Hype Foundry" class="logo" style="width: 213px;">
+        </div>
+        <div class="cover-content">
+            <h1 class="title-main">Virtus Brand<br>Identity & Website<br>Proposal</h1>
+            <p class="subtitle">Prepared for Virtus (Momentum Consulting)</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Overview & Discovery & Positioning -->
+    <div class="page page-content">
+        <div class="header">
+            <img src="hf-logo.svg" alt="Hype Foundry" class="logo">
+            <hr class="header-line">
+        </div>
+
+        <h2 class="brand-name">Virtus</h2>
+        <p class="page-title">Brand Identity & Website Design Proposal</p>
+
+        <hr class="divider" style="margin-top: 0;">
+
+        <h3 class="section-title">Overview</h3>
+        <p style="font-size: 12.5pt;">Virtus is being launched as a standalone white-collar recruitment brand, distinct from Momentum's established blue-collar operations.</p>
+        <p style="font-size: 12.5pt;">The purpose of this engagement is to establish a credible, professional brand identity and a clean, conversion-focused website that positions Virtus appropriately in the white-collar market from day one.</p>
+        <p style="font-size: 12.5pt;">This project is delivered as a single, cohesive engagement, covering brand identity and website design and build, to ensure clarity, consistency, and long-term usability across all touchpoints.</p>
+
+        <hr class="divider">
+
+        <h3 class="section-title">Delivery Approach</h3>
+        <p>The project is delivered sequentially to reduce risk and maintain clarity:</p>
+        <ol>
+            <li>Align on positioning and direction</li>
+            <li>Establish brand foundations</li>
+            <li>Apply the brand consistently across the website</li>
+            <li>Build, test, and launch</li>
+        </ol>
+        <p>This approach ensures decisions are intentional and cohesive, rather than rushed or fragmented under time pressure.</p>
+
+        <hr class="divider">
+
+        <h3 class="section-title">Review & Feedback</h3>
+        <p>Each phase of the project includes structured review and feedback to ensure alignment before progressing.</p>
+        <ul>
+            <li>Feedback is consolidated and provided in a single round per phase</li>
+            <li>Revisions focus on refinement and alignment, not re-direction</li>
+            <li>Each phase is signed off before moving to the next to maintain timeline and momentum</li>
+        </ul>
+        <p>This approach keeps the project efficient while ensuring decisions are considered and intentional.</p>
+    </div>
+
+    <!-- Page 3: Scope of Work & Discovery & Positioning -->
+    <div class="page page-content">
+        <div class="header">
+            <img src="hf-logo.svg" alt="Hype Foundry" class="logo">
+            <hr class="header-line">
+        </div>
+
+        <h3 class="section-title">Scope of Work</h3>
+
+        <h4 class="subsection-title">1. Discovery & Positioning</h4>
+        <p>A short upfront alignment phase to ensure clarity before any design execution.</p>
+        <p>This includes:</p>
+        <ul>
+            <li>Alignment on target audience and market positioning</li>
+            <li>Definition of tone, level of professionalism, and brand personality</li>
+            <li>Clarification of key differentiators</li>
+            <li>Agreement on how Virtus should be positioned relative to Momentum</li>
+        </ul>
+        <p>This phase ensures the brand is grounded in the right perception and avoids rework later in the process.</p>
+
+        <hr class="divider">
+
+        <h4 class="subsection-title">2. Brand Identity</h4>
+        <p>Development of a practical, professional brand identity designed specifically for a white-collar recruitment audience.</p>
+        <p>The process includes presenting a small set of initial brand concepts, with one selected for refinement and final development.</p>
+        <p>Deliverables include:</p>
+        <ul>
+            <li>Primary and secondary logo</li>
+            <li>Core colour palette</li>
+            <li>Typography selection</li>
+            <li>Lightweight brand style guide, covering:
+                <ul class="nested">
+                    <li>Logo usage fundamentals</li>
+                    <li>Colour and typography application</li>
+                    <li>Guidance for consistent use across web, pitch decks, and marketing materials</li>
+                </ul>
+            </li>
+        </ul>
+        <p>The style guide is intentionally concise and practical, providing a lightweight design system that helps internal teams and external partners apply the brand consistently without unnecessary complexity.</p>
+        <p>The visual direction is designed to translate confidently across:</p>
+        <ul>
+            <li>Website</li>
+            <li>Pitch decks and proposals</li>
+            <li>Marketing and communications</li>
+        </ul>
+    </div>
+
+    <!-- Page 4: Website Design & Build -->
+    <div class="page page-content">
+        <div class="header">
+            <img src="hf-logo.svg" alt="Hype Foundry" class="logo">
+            <hr class="header-line">
+        </div>
+
+        <h4 class="subsection-title">3. Website Design</h4>
+        <p>Design of a clean, professional website aligned with the Virtus brand and white-collar positioning.</p>
+        <p>The process includes selecting the most appropriate platform (Framer or Webflow) based on the marketing team's needs, with layouts developed either through wireframes or a refined template-based approach depending on scope and complexity.</p>
+        <p>This includes:</p>
+        <ul>
+            <li>Agreed website structure and key pages</li>
+            <li>Mobile-responsive design</li>
+            <li>Clear hierarchy, spacing, and content flow</li>
+            <li>Reference to people2people.com.au as a benchmark for clarity and credibility (not visual imitation)</li>
+        </ul>
+        <p>Design decisions prioritise trust, readability, and conversion, with a focus on longevity rather than trends.</p>
+
+        <hr class="divider">
+
+        <h4 class="subsection-title">4. Website Build & Launch</h4>
+        <ul>
+            <li>Full website build</li>
+            <li>Responsive across desktop, tablet, and mobile</li>
+            <li>Content structured for ease of internal updates and future scaling</li>
+            <li>Basic documentation and handover</li>
+            <li>Launch support</li>
+        </ul>
+        <p>The site will be built with practicality in mind, ensuring it is easy for the internal team to manage post-launch.</p>
+
+        <hr class="divider">
+
+        <h3 class="section-title">Investment</h3>
+        <ul>
+            <li><strong>$4,200 AUD (excl GST)</strong></li>
+            <li>Covers brand identity and website as a single, cohesive engagement</li>
+        </ul>
+
+        <hr class="divider">
+
+        <h3 class="section-title">Payment Terms</h3>
+        <ul>
+            <li>50% initial deposit to commence work</li>
+            <li>50% on final handover prior to launch</li>
+        </ul>
+
+        <hr class="divider">
+
+        <h3 class="section-title">Timeline</h3>
+        <ul>
+            <li>Approximately four (4) weeks end-to-end</li>
+            <li>Structured to comfortably support a 1 April launch, without compromising quality or decision-making</li>
+        </ul>
+    </div>
+
+    <!-- Page 5: Next Steps, Optional Support -->
+    <div class="page page-content">
+        <div class="header">
+            <img src="hf-logo.svg" alt="Hype Foundry" class="logo">
+            <hr class="header-line">
+        </div>
+
+        <h3 class="section-title">Next Steps</h3>
+        <p>Upon approval:</p>
+        <ul>
+            <li>Confirm scope and timing</li>
+            <li>Lock in project commencement</li>
+            <li>Begin discovery and positioning phase</li>
+        </ul>
+
+        <hr class="divider">
+
+        <h3 class="section-title">Optional: Ongoing Design Support</h3>
+        <p>Following launch, optional ongoing design support is available to assist with website updates and additional brand applications as required. Support is offered on a flexible, subscription-style basis and can be discussed post-launch.</p>
+        <div class="page-footer">
+            <span>Prepared for Virtus (Momentum Consulting)</span>
+            <span>Prepared: 5 February 2025</span>
+        </div>
+    </div>
+
+    <!-- Page 6: End Page (Contact) -->
+    <div class="page page-end">
+        <div class="header">
+            <img src="hf-logo.svg" alt="Hype Foundry" class="logo" style="width: 213px;">
+        </div>
+        <div class="contact-section">
+            <div class="contact-row">
+                <span class="contact-label">Clark Spendelow</span>
+                <span class="contact-value">Creative Director & Designer</span>
+            </div>
+            <div class="contact-row">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">hello@hypefoundry.studio</span>
+            </div>
+            <div class="contact-row">
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">0433061993</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

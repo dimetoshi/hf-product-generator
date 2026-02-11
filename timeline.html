@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtus — Project Timeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-black: #1A1A1A;
+            --color-gray-bg: #D9D9D9;
+            --color-white: #FFFFFF;
+            --color-divider: #E0E0E0;
+            --color-accent: #D5FF02;
+            --font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 10.5pt;
+            line-height: 1.5;
+            color: var(--color-black);
+            background: var(--color-white);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 32px 40px;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* Cover Page */
+        .page-cover {
+            background-image: url('hf-graphic.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Content Pages */
+        .page-content {
+            background: var(--color-white);
+        }
+
+        /* Logo */
+        .logo {
+            width: 142px;
+            height: auto;
+        }
+
+        /* Header with logo and line */
+        .header {
+            margin-bottom: 24px;
+        }
+
+        .header-line {
+            border: none;
+            border-top: 1px solid var(--color-divider);
+            margin-top: 16px;
+        }
+
+        /* Typography */
+        .title-main {
+            font-weight: 800;
+            font-size: 48pt;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-weight: 400;
+            font-size: 11pt;
+            color: var(--color-black);
+        }
+
+        .brand-name {
+            font-weight: 800;
+            font-size: 24pt;
+            margin-bottom: 8px;
+            margin-top: 32px;
+        }
+
+        .page-title {
+            font-weight: 600;
+            font-size: 18pt;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            font-size: 14pt;
+            margin-bottom: 8px;
+        }
+
+        .phase-date {
+            font-weight: 500;
+            font-size: 10pt;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--color-divider);
+            margin: 16px 0;
+        }
+
+        /* Body text */
+        p {
+            margin-bottom: 10px;
+        }
+
+        /* Lists */
+        ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 2px;
+            font-size: 10pt;
+        }
+
+        /* Cover page title area */
+        .cover-content {
+            margin-top: auto;
+        }
+
+        /* Launch dates highlight */
+        .launch-dates {
+            background: #f5f5f5;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            border-left: 3px solid var(--color-black);
+        }
+
+        .launch-dates p {
+            margin-bottom: 4px;
+            font-size: 11pt;
+        }
+
+        .launch-dates strong {
+            font-weight: 600;
+        }
+
+        /* Phase block */
+        .phase {
+            margin-bottom: 20px;
+        }
+
+        .phase-outcome {
+            font-style: italic;
+            font-size: 10pt;
+            margin-top: 8px;
+            padding-left: 12px;
+            border-left: 2px solid var(--color-divider);
+        }
+
+        /* Milestone blocks */
+        .milestone {
+            background: #f9f9f9;
+            padding: 8px 16px;
+            margin-bottom: 8px;
+        }
+
+        .milestone .section-title {
+            margin-bottom: 4px;
+        }
+
+        .milestone .phase-date {
+            margin-bottom: 8px;
+        }
+
+        /* Important note */
+        .important-note {
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            padding: 8px 16px;
+            margin-top: 12px;
+        }
+
+        .important-note strong {
+            font-weight: 600;
+        }
+
+        /* Signature section */
+        .signature-section {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--color-divider);
+        }
+
+        .signature-title {
+            font-weight: 600;
+            font-size: 14pt;
+            margin-bottom: 24px;
+        }
+
+        .signature-grid {
+            display: flex;
+            gap: 40px;
+        }
+
+        .signature-box {
+            flex: 1;
+        }
+
+        .signature-label {
+            font-weight: 500;
+            font-size: 10pt;
+            margin-bottom: 8px;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid var(--color-black);
+            height: 50px;
+            margin-bottom: 8px;
+        }
+
+        .signature-name-line {
+            border-bottom: 1px solid var(--color-divider);
+            height: 24px;
+            margin-bottom: 4px;
+        }
+
+        .signature-field-label {
+            font-size: 8pt;
+            color: #999;
+        }
+
+        /* Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 32px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 8pt;
+            color: #999999;
+        }
+
+        /* Print specific */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page {
+                margin: 0;
+                border: none;
+                box-shadow: none;
+            }
+
+            .page-cover {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Screen preview */
+        @media screen {
+            body {
+                background: #f0f0f0;
+                padding: 20px;
+            }
+
+            .page {
+                margin: 0 auto 20px auto;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page 1: Cover -->
+    <div class="page page-cover">
+        <div class="header">
+            <img src="hf-logo.svg" alt="Hype Foundry" class="logo" style="width: 213px;">
+        </div>
+        <div class="cover-content">
+            <h1 class="title-main">Virtus<br>Project Timeline</h1>
+            <p class="subtitle">Prepared for Virtus (Momentum Consulting)</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Timeline Overview -->
+    <div class="page page-content">
+        <div class="header">
+            <img src="hf-logo.svg" alt="Hype Foundry" class="logo">
+            <hr class="header-line">
+        </div>
+
+        <h2 class="brand-name">Virtus</h2>
+        <p class="page-title">Project Timeline</p>
+
+        <div class="launch-dates">
+            <p><strong>Soft Launch Target:</strong> Sunday 15 March 2026</p>
+            <p><strong>Public Launch:</strong> Monday 30 March 2026</p>
+        </div>
+
+        <div class="phase">
+            <h3 class="section-title">Phase 1 — Discovery & Positioning</h3>
+            <p class="phase-date">17 – 21 February</p>
+            <ul>
+                <li>Internal market and competitor review (to inform positioning discussion)</li>
+                <li>Alignment session with key stakeholders</li>
+                <li>Confirmation of positioning, tone, and direction</li>
+                <li>Website structure agreed</li>
+                <li>Content requirements clarified</li>
+            </ul>
+            <p class="phase-outcome">Outcome: Positioning and direction approved by 21 February</p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="phase">
+            <h3 class="section-title">Phase 2 — Brand Identity</h3>
+            <p class="phase-date">24 – 28 February</p>
+            <ul>
+                <li>Presentation of initial brand concepts</li>
+                <li>Selection of preferred direction</li>
+                <li>Refinement and finalisation</li>
+                <li>Preparation of lightweight brand style guide</li>
+            </ul>
+            <p class="phase-outcome">Outcome: Brand identity approved by 28 February</p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="phase">
+            <h3 class="section-title">Phase 3 — Website Design</h3>
+            <p class="phase-date">3 – 7 March</p>
+            <ul>
+                <li>Homepage design</li>
+                <li>Core internal page templates</li>
+                <li>Mobile-first responsive considerations</li>
+                <li>Structured review and refinement</li>
+            </ul>
+            <p class="phase-outcome">Outcome: Website design approved by 7 March</p>
+        </div>
+
+    </div>
+
+    <!-- Page 3: Phase 4, Milestones & Sign-off -->
+    <div class="page page-content">
+        <div class="header">
+            <img src="hf-logo.svg" alt="Hype Foundry" class="logo">
+            <hr class="header-line">
+        </div>
+
+        <div class="phase">
+            <h3 class="section-title">Phase 4 — Website Build</h3>
+            <p class="phase-date">10 – 14 March</p>
+            <ul>
+                <li>Platform confirmation (Framer or Webflow)</li>
+                <li>Responsive build and content population</li>
+                <li>Quality assurance and device testing</li>
+            </ul>
+            <p class="phase-outcome">Outcome: Site ready for internal review by 14 March</p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="milestone">
+            <h3 class="section-title">Soft Launch</h3>
+            <p class="phase-date">Sunday 15 March</p>
+            <ul>
+                <li>Internal access provided</li>
+                <li>Final refinements</li>
+                <li>Performance and functionality checks</li>
+            </ul>
+        </div>
+
+        <div class="milestone">
+            <h3 class="section-title">Optimisation & Buffer Window</h3>
+            <p class="phase-date">16 – 29 March</p>
+            <ul>
+                <li>Minor refinements</li>
+                <li>Copy adjustments</li>
+                <li>Internal familiarisation</li>
+                <li>Analytics and tracking setup</li>
+                <li>Final pre-launch checks</li>
+            </ul>
+        </div>
+
+        <div class="milestone">
+            <h3 class="section-title">Public Launch</h3>
+            <p class="phase-date">Monday 30 March</p>
+        </div>
+
+        <div class="important-note">
+            <p><strong>Important Assumption</strong></p>
+            <p>To maintain this schedule, consolidated feedback is required within 48 hours at each review stage.</p>
+        </div>
+
+        <div class="signature-section">
+            <h3 class="signature-title">Approval & Sign-off</h3>
+
+            <div class="signature-grid">
+                <div class="signature-box">
+                    <p class="signature-label">Hype Foundry</p>
+                    <div class="signature-line"></div>
+                    <div class="signature-name-line"></div>
+                    <p class="signature-field-label">Name</p>
+                    <div class="signature-name-line"></div>
+                    <p class="signature-field-label">Date</p>
+                </div>
+                <div class="signature-box">
+                    <p class="signature-label">Virtus (Momentum Consulting)</p>
+                    <div class="signature-line"></div>
+                    <div class="signature-name-line"></div>
+                    <p class="signature-field-label">Name</p>
+                    <div class="signature-name-line"></div>
+                    <p class="signature-field-label">Date</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
