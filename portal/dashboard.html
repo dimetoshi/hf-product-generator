@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Hype Foundry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/portal.css">
+</head>
+<body class="dashboard-page">
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="header-logo">
+                <img src="assets/hf-logo.svg" alt="Hype Foundry">
+            </a>
+            <div class="header-right">
+                <span id="client-name" class="client-name"></span>
+                <button id="logout-btn" class="btn-logout">
+                    Logout
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="welcome">
+                <h1>Welcome back</h1>
+                <p id="project-subtitle">Your project documents and deliverables</p>
+            </div>
+
+            <div class="tiles-grid" id="tiles-grid">
+                <!-- Tiles will be injected by JS -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Need help? <a href="mailto:hello@hypefoundry.studio">hello@hypefoundry.studio</a></p>
+            <p class="footer-copyright">Hype Foundry</p>
+        </div>
+    </footer>
+
+    <script src="js/portal.js"></script>
+</body>
+</html>
